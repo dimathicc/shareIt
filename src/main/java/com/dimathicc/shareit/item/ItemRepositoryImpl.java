@@ -1,5 +1,6 @@
 package com.dimathicc.shareit.item;
 
+import com.dimathicc.shareit.user.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class ItemRepositoryImpl implements ItemRepository {
     public List<Item> showAllMyItems(long userId) {
         List<Item> foundItems = new ArrayList<>();
         for(Item item : items) {
-            if (item.getOwner().getId() == userId) {
+            if (item.getOwnerId() == userId) {
                 foundItems.add(item);
             }
         }

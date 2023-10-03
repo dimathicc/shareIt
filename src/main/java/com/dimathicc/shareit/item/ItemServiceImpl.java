@@ -1,6 +1,5 @@
 package com.dimathicc.shareit.item;
 
-import com.dimathicc.shareit.user.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,29 +9,27 @@ import java.util.List;
 public class ItemServiceImpl implements ItemService {
 
     private final ItemRepository itemRepository;
-    private final UserService userService;
     private final ItemMapper mapper;
 
 
-    public ItemServiceImpl(ItemRepository itemRepository, UserService userService, ItemMapper mapper) {
+    public ItemServiceImpl(ItemRepository itemRepository, ItemMapper mapper) {
         this.itemRepository = itemRepository;
-        this.userService = userService;
         this.mapper = mapper;
     }
 
     @Override
-    public ItemDTO addItem(long userId, ItemDTO itemDTO) throws ItemNotFoundException {
-        Item item = mapper.itemDTOToItem(itemDTO);
+    public ItemDTO addItem(long userId, ItemDTO itemDTO) {
+        Item item = mapper.itemDTOToItem(userId, itemDTO);
         item.setItemStatus(ItemStatus.AVAILABLE);
-        item.setOwner(userService.findOwnerByUserId(userId));
+        item.setOwnerId(userId);
         itemRepository.addItem(item);
         return itemDTO;
     }
 
     @Override
-    public ItemDTO editItem(long itemId, long userId, ItemDTO itemDTO) throws ItemNotFoundException, ItemEditException {
-        Item item = mapper.itemDTOToItem(itemDTO);
-        if (item.getOwner() == userService.findOwnerByUserId(userId)) {
+    public ItemDTO editItem(long itemId, long userId, ItemDTO itemDTO) throws ItemEditException {
+        Item item = mapper.itemDTOToItem(userId, itemDTO);
+        if (item.getOwnerId() == userId) {
             itemRepository.editItem(itemId, userId, item);
         } else {
             throw new ItemEditException("Item is not your, so you can't edit it");

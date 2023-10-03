@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDTO create(UserDTO userDTO) throws UserNotFoundException {
+    public UserDTO create(UserDTO userDTO) {
         userRepository.create(mapper.userDTOToUser(userDTO));
         return userDTO;
     }
@@ -51,5 +51,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User delete(long userId) {
         return userRepository.delete(userId);
+    }
+
+    @Override
+    public List<User> debug() {
+        return userRepository.findAll();
     }
 }

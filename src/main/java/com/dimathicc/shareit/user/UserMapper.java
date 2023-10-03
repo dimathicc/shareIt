@@ -5,24 +5,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserMapper {
     private final UserRepository userRepository;
+    private long id;
 
     public UserMapper(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public User userDTOToUser(UserDTO userDTO) throws UserNotFoundException {
+    public User userDTOToUser(UserDTO userDTO) {
         User user = new User();
         user.setId(userRepository.findIdByName(userDTO.getName()));
-        if (user.getId() == -1) throw new UserNotFoundException("User not found");
+
+        if (user.getId() == -1) user.setId(id++);
         user.setName(userDTO.getName());
-        user.setItems(userDTO.getItems());
         return user;
     }
 
     public UserDTO userToUserDTO(User user) {
         UserDTO userDTO = new UserDTO();
         userDTO.setName(user.getName());
-        userDTO.setItems(user.getItems());
         return userDTO;
     }
 }

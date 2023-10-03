@@ -14,28 +14,33 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping("/debug")
+    public List<User> findAllDebug() {
+        return userService.debug();
+    }
+
     @GetMapping("/{userId}")
-    private UserDTO findUserById(@PathVariable long userId) {
+    public UserDTO findUserById(@PathVariable long userId) {
         return userService.findUserById(userId);
     }
 
     @GetMapping
-    private List<UserDTO> findAll() {
+    public List<UserDTO> findAll() {
         return userService.findAll();
     }
 
     @PostMapping
-    private UserDTO create(@RequestBody UserDTO userDTO) throws UserNotFoundException {
+    public UserDTO create(@RequestBody UserDTO userDTO) throws UserNotFoundException {
         return userService.create(userDTO);
     }
 
     @PutMapping("/{userId}")
-    private UserDTO update(@PathVariable int userId, @RequestBody UserDTO userToBeUpdated) throws UserNotFoundException {
+    public UserDTO update(@PathVariable int userId, @RequestBody UserDTO userToBeUpdated) throws UserNotFoundException {
         return userService.update(userId, userToBeUpdated);
     }
 
     @DeleteMapping("/{userId}")
-    private User delete(@PathVariable int userId) {
+    public User delete(@PathVariable int userId) {
         return userService.delete(userId);
     }
 }

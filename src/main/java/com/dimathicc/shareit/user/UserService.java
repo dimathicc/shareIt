@@ -10,4 +10,6 @@ public interface UserService {
     UserDTO create(UserDTO userDTO) throws UserNotFoundException;
     UserDTO update(int userId, UserDTO userDTO) throws UserNotFoundException;
     User delete(long userId);
+
+    List<User> debug();
 }
