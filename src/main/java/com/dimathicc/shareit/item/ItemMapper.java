@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ItemMapper {
-
     private final ItemRepository itemRepository;
     private long id;
 
