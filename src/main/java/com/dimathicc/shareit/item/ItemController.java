@@ -1,5 +1,8 @@
 package com.dimathicc.shareit.item;
 
+import com.dimathicc.shareit.item.dto.ItemDTO;
+import com.dimathicc.shareit.item.exception.ItemEditException;
+import com.dimathicc.shareit.item.exception.ItemNotFoundException;
 import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.dimathicc.shareit.user;
+package com.dimathicc.shareit.user.exception;
 
 public class UserNotFoundException extends Throwable {
     public UserNotFoundException(String message) {

@@ -1,4 +1,4 @@
-package com.dimathicc.shareit.item;
+package com.dimathicc.shareit.item.exception;
 
 public class ItemEditException extends Throwable {
     public ItemEditException(String message) {

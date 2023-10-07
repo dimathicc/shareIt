@@ -1,5 +1,6 @@
-package com.dimathicc.shareit.item;
+package com.dimathicc.shareit.item.dto;
 
+import com.dimathicc.shareit.item.model.ItemStatus;
 import lombok.Data;
 
 @Data

@@ -1,5 +1,11 @@
 package com.dimathicc.shareit.item;
 
+import com.dimathicc.shareit.item.dao.ItemRepository;
+import com.dimathicc.shareit.item.dto.ItemDTO;
+import com.dimathicc.shareit.item.dto.ItemMapper;
+import com.dimathicc.shareit.item.exception.ItemEditException;
+import com.dimathicc.shareit.item.model.Item;
+import com.dimathicc.shareit.item.model.ItemStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

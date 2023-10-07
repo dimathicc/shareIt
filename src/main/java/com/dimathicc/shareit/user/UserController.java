@@ -1,5 +1,8 @@
 package com.dimathicc.shareit.user;
 
+import com.dimathicc.shareit.user.dto.UserDTO;
+import com.dimathicc.shareit.user.exception.UserNotFoundException;
+import com.dimathicc.shareit.user.model.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

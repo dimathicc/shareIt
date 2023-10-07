@@ -1,5 +1,7 @@
-package com.dimathicc.shareit.user;
+package com.dimathicc.shareit.user.dto;
 
+import com.dimathicc.shareit.user.model.User;
+import com.dimathicc.shareit.user.dao.UserRepository;
 import org.springframework.stereotype.Component;
 
 @Component

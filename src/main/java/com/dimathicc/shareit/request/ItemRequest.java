@@ -1,7 +1,7 @@
 package com.dimathicc.shareit.request;
 
-import com.dimathicc.shareit.item.Item;
-import com.dimathicc.shareit.user.User;
+import com.dimathicc.shareit.item.model.Item;
+import com.dimathicc.shareit.user.model.User;
 import lombok.Data;
 
 @Data

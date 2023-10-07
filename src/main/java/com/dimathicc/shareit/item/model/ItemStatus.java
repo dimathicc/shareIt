@@ -1,4 +1,4 @@
-package com.dimathicc.shareit.item;
+package com.dimathicc.shareit.item.model;
 
 public enum ItemStatus {
     AVAILABLE,

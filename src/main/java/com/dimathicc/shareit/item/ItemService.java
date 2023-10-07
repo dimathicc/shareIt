@@ -1,5 +1,9 @@
 package com.dimathicc.shareit.item;
 
+import com.dimathicc.shareit.item.dto.ItemDTO;
+import com.dimathicc.shareit.item.exception.ItemEditException;
+import com.dimathicc.shareit.item.exception.ItemNotFoundException;
+
 import java.util.List;
 
 public interface ItemService {

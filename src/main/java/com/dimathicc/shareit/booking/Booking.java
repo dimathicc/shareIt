@@ -1,10 +1,9 @@
 package com.dimathicc.shareit.booking;
 
-import com.dimathicc.shareit.user.User;
+import com.dimathicc.shareit.user.model.User;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Map;
 
 @Data

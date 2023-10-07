@@ -1,4 +1,6 @@
-package com.dimathicc.shareit.item;
+package com.dimathicc.shareit.item.dao;
+
+import com.dimathicc.shareit.item.model.Item;
 
 import java.util.List;
 

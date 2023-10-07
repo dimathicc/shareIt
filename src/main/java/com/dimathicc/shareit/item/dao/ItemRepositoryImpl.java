@@ -1,6 +1,6 @@
-package com.dimathicc.shareit.item;
+package com.dimathicc.shareit.item.dao;
 
-import com.dimathicc.shareit.user.UserRepository;
+import com.dimathicc.shareit.item.model.Item;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

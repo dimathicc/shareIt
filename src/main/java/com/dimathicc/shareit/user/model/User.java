@@ -1,6 +1,6 @@
-package com.dimathicc.shareit.user;
+package com.dimathicc.shareit.user.model;
 
-import com.dimathicc.shareit.item.Item;
+import com.dimathicc.shareit.item.model.Item;
 import lombok.Data;
 
 import java.util.List;
